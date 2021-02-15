@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Encoder {
@@ -67,45 +66,51 @@ public class Encoder {
         String numString = Integer.toString(num);
         sortedWords = new String[countingSorted.length];
 
-        if (num > 100000) {
-            int a = (Integer.valueOf(numString.substring(0, 2)));
-            int b = (Integer.valueOf(numString.substring(2, 4)));
-            int c = (Integer.valueOf(numString.substring(4, 6)));
+        for (int i = 0; i < 3; i ++) {
+            numLetter[i] = ' ';
+        }
+
+        num += 1;
+
+        if (num > 100000 && num < 1000000) {
+            int a = (Integer.parseInt(numString.substring(0, 2)));
+            int b = (Integer.parseInt(numString.substring(2, 4)));
+            int c = (Integer.parseInt(numString.substring(4, 6)));
 
             numLetter[0] = (char) (a + 96);
             numLetter[1] = (char) (b + 96);
             numLetter[2] = (char) (c + 96);
         }
         if (num > 10000 && num < 100000){
-            int a = (Integer.valueOf(numString.substring(0, 1)));
-            int b = (Integer.valueOf(numString.substring(1, 3)));
-            int c = (Integer.valueOf(numString.substring(3, 5)));
+            int a = (Integer.parseInt(numString.substring(0, 1)));
+            int b = (Integer.parseInt(numString.substring(1, 3)));
+            int c = (Integer.parseInt(numString.substring(3, 5)));
 
             numLetter[0] = (char) (a + 96);
             numLetter[1] = (char) (b + 96);
             numLetter[2] = (char) (c + 96);
         }
         if (num > 1000 && num < 10000) {
-            int a = (Integer.valueOf(numString.substring(0, 2)));
-            int b = (Integer.valueOf(numString.substring(2, 4)));
+            int a = (Integer.parseInt(numString.substring(0, 2)));
+            int b = (Integer.parseInt(numString.substring(2, 4)));
 
             numLetter[0] = (char) (a + 96);
             numLetter[1] = (char) (b + 96);
         }
         if (num > 100 && num < 1000) {
-            int a = (Integer.valueOf(numString.substring(0, 1)));
-            int b = (Integer.valueOf(numString.substring(1, 3)));
+            int a = (Integer.parseInt(numString.substring(0, 1)));
+            int b = (Integer.parseInt(numString.substring(1, 3)));
 
             numLetter[0] = (char) (a + 96);
             numLetter[1] = (char) (b + 96);
         }
         if (num > 10 && num < 100) {
-            int a = (Integer.valueOf(numString.substring(0, 2)));
+            int a = (Integer.parseInt(numString.substring(0, 2)));
 
             numLetter[0] = (char) (a + 96);
         }
         if (num > 0 && num < 10) {
-            int a = (Integer.valueOf(numString.substring(0, 1)));
+            int a = (Integer.parseInt(numString.substring(0, 1)));
 
             numLetter[0] = (char) (a + 96);
         }
